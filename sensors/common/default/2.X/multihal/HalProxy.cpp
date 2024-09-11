@@ -82,8 +82,7 @@ int64_t msFromNs(int64_t nanos) {
 }
 
 HalProxy::HalProxy() {
-    static const std::string kMultiHalConfigFiles[] = {"/vendor/etc/sensors/hals.conf",
-                                                       "/odm/etc/sensors/hals.conf"};
+    static const std::string kMultiHalConfigFiles[] = {"/vendor/etc/sensors/hals.conf"};
     for (const std::string& configFile : kMultiHalConfigFiles) {
         initializeSubHalListFromConfigFile(configFile.c_str());
     }
